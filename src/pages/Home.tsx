@@ -4,7 +4,7 @@ import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Users, Zap, Target, Sparkles } from "lucide-react";
+import { Users, Zap, Target, Sparkles } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
