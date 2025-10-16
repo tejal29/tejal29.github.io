@@ -39,7 +39,7 @@ export default function Home() {
                      </div>
             </div>
             
-            <div className="relative">
+            <div className="relative hidden md:block">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-amber-400 rounded-3xl transform rotate-3"></div>
               <div className="relative bg-white p-8 rounded-3xl shadow-2xl">
                 <div className="w-full h-80 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center">
