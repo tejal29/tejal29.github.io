@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import MathCorner from './pages/Mathcorner';
 import Projects from './pages/Projects';
+import profileImage from './profile.jpeg';
 
 // Create a client
 const queryClient = new QueryClient();
@@ -22,7 +23,7 @@ const Resources = () => (
         <div className="text-center mb-8">
           <div className="w-32 h-32 mx-auto mb-6">
             <img 
-              src="/src/profile.jpeg" 
+              src={profileImage} 
               alt="Tejal Desai" 
               className="w-full h-full rounded-full object-cover border-4 border-orange-200 shadow-lg"
             />
