@@ -167,7 +167,7 @@ export default function Projects() {
         onClose={() => setIsPilotFormOpen(false)}
         title="Join CodeCrafter Kids Pilot"
         submitText="Join Pilot"
-        defaultMessage="I am interested in joining the pilot for Scratch/Python for my 7 year old kid"
+        defaultMessage="I am interested in joining the pilot for Scratch or Python for my 7 year old kid. Send me the details."
       />
       
       {/* Contact Form Modal */}

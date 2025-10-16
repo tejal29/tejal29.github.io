@@ -4,7 +4,7 @@ import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Zap, Target, Sparkles } from "lucide-react";
+import { ArrowRight, Users, Zap, Target, Sparkles } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
@@ -84,7 +84,7 @@ export default function Home() {
               {
                 icon: Zap,
                 title: "Coding & STEM Education",
-                description: "Teaching coding to kids using Scratch and Python through custom curriculum design and one-on-one STEMtutoring for elementary and middle school students.",
+                description: "Teaching coding to kids using Scratch and Python through custom curriculum design and one-on-one tutoring for elementary and middle school students.",
                 color: "from-green-500 to-emerald-500"
               }
             ].map((item, index) => {
