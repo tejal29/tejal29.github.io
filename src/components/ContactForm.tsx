@@ -17,17 +17,42 @@ export default function ContactForm({ isOpen, onClose, title, submitText, defaul
     email: '',
     message: defaultMessage
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Here you would typically send the data to your backend
-    // For now, we'll just show a success message
-    alert(`Thank you ${formData.name}! We'll get back to you at ${formData.email} soon.`);
-    
-    // Reset form
-    setFormData({ name: '', email: '', message: defaultMessage });
-    onClose();
+    setIsSubmitting(true);
+
+    try {
+      // Using Formspree - secure and works with GitHub Pages
+      const response = await fetch('https://formspree.io/f/xanpvqaa', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `New message from ${formData.name} - Portfolio Contact Form`
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      alert(`Thank you ${formData.name}! Your message has been sent successfully. We'll get back to you at ${formData.email} soon.`);
+      
+      // Reset form
+      setFormData({ name: '', email: '', message: defaultMessage });
+      onClose();
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      alert('Sorry, there was an error sending your message. Please try again or contact me directly at tejal29@gmail.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -112,9 +137,10 @@ export default function ContactForm({ isOpen, onClose, title, submitText, defaul
             </Button>
             <Button
               type="submit"
-              className="flex-1 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white"
+              disabled={isSubmitting}
+              className="flex-1 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white disabled:opacity-50"
             >
-              {submitText}
+              {isSubmitting ? 'Sending...' : submitText}
             </Button>
           </div>
         </form>
