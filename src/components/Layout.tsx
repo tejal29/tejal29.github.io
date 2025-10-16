@@ -52,11 +52,7 @@ export default function Layout({ children }: LayoutProps) {
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-                  Tejal
-                </h1>
-                       <p className="text-xs text-gray-600">EdTech Builder</p>
-              </div>
+                             </div>
             </Link>
 
             <div className="hidden md:flex items-center gap-1">
