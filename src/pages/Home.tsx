@@ -4,8 +4,9 @@ import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Zap, Target, Sparkles } from "lucide-react";
+import { Users, Zap, Target } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import portfolioImage from "@/portfolio.jpg";
 
 export default function Home() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
@@ -42,12 +43,12 @@ export default function Home() {
             <div className="relative hidden md:block">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-amber-400 rounded-3xl transform rotate-3"></div>
               <div className="relative bg-white p-8 rounded-3xl shadow-2xl">
-                <div className="w-full h-80 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <Sparkles className="w-16 h-16 mx-auto mb-4 opacity-80" />
-                    <h3 className="text-xl font-bold">Portfolio Image</h3>
-                    <p className="text-sm opacity-90">Coming Soon</p>
-                  </div>
+                <div className="w-full h-80 rounded-2xl overflow-hidden">
+                  <img 
+                    src={portfolioImage} 
+                    alt="Tejal Desai" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl">
                 </div>
